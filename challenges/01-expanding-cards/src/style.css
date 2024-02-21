@@ -1,0 +1,114 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-size: 16px;
+
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  width: 50vw;
+  min-width: 50rem;
+  max-width: 80rem;
+
+  height: 50vh;
+  min-height: 30rem;
+  max-height: 50rem;
+
+  display: flex;
+  margin: 0 auto;
+}
+
+.cards {
+  flex: 1;
+
+  display: flex;
+  overflow: hidden;
+
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.cards_panel {
+  --themeColor: rgba(62, 62, 62, 0.45);
+
+  flex: .5;
+
+  background-image: var(--imgUrl);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  cursor: pointer;
+
+  border-radius: 4.2rem;
+  box-shadow: 0 0 8px -2px rgba(62, 62, 62, 0.45);
+  filter: grayscale(.85);
+
+  transition: all .7s ease-in-out;
+}
+
+.cards_panel:focus {
+  outline: var(--themeColor) auto .15rem;
+  outline-offset: .5rem;
+}
+
+.cards_panel:not(.cards_panel--active):hover {
+  flex: .8;
+
+  filter: grayscale(.2);
+}
+
+.cards_panel--cc::after {
+  width: fit-content;
+
+  position: absolute;
+  bottom: .5rem;
+  right: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-weight: bold;
+  mix-blend-mode: soft-light;
+
+  opacity: 0;
+
+  transition: all .7s ease-in-out;
+}
+
+.cards_panel--active {
+  filter: grayscale(0);
+
+  box-shadow: 0 0 20px -5px var(--themeColor);
+
+  flex: 5;
+}
+
+.cards_panel--active.cards_panel--cc::after {
+  opacity: 1;
+}
+
+.cards_panel--cc.unsplash::after {
+  content: 'Unsplash' / '';
+}
