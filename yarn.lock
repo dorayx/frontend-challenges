@@ -11,6 +11,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"02-progress-steps@workspace:challenges/02-progress-steps":
+  version: 0.0.0-use.local
+  resolution: "02-progress-steps@workspace:challenges/02-progress-steps"
+  languageName: unknown
+  linkType: soft
+
 "@aashutoshrathi/word-wrap@npm:^1.2.3":
   version: 1.2.6
   resolution: "@aashutoshrathi/word-wrap@npm:1.2.6"
